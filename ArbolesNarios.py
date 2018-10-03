@@ -46,4 +46,6 @@ a1 = ArbolNario(dato=2,
                          ArbolNario(dato=8,
                                     arboles=[ArbolNario(dato=16),ArbolNario(dato=32)]),
                          ArbolNario(dato=5,
-                                    arboles=[ArbolNario(dato=25),ArbolNario(dato=50)])])
+                                    arboles=[ArbolNario(dato=25),ArbolNario(dato=50)])
+						]
+			)
