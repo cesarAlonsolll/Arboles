@@ -42,7 +42,7 @@ def contarElementos_1(arbol):
     
 a1 = ArbolNario(dato=2,
                 arboles=[ArbolNario(dato=4,
-                                   arboles=[ArbolNario(dato=12),ArbolNario(dato=24),ArbolNario(dato=40)]),
+                                    arboles=[ArbolNario(dato=12),ArbolNario(dato=24),ArbolNario(dato=40)]),
                          ArbolNario(dato=8,
                                     arboles=[ArbolNario(dato=16),ArbolNario(dato=32)]),
                          ArbolNario(dato=5,

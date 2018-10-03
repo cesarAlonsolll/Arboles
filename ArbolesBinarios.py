@@ -18,13 +18,10 @@ def buscarEnArbol(dato, arbol):
     elif dato>arbol.dato:
         if arbol.der!=None:
             return buscarEnArbol(dato, arbol.der)
-        else:
-            return False
-    elif dato<arbol.dato:
+    else:
         if arbol.izq!=None:
             return buscarEnArbol(dato, arbol.izq)
-        else:
-            return False
+    return False
         
 def contarNodos(arbol):
      if arbol==None:
@@ -48,15 +45,13 @@ def contarElementos(arbol):
     else:
         return 1+contarElementos(arbol.der)+contarElementos(arbol.izq)
     
-def insertarElemento(dato, arbol):
+def insertar(dato,arbol):
     if arbol==None:
-        arbol=ArbolBinario(dato)
+        return ArbolBinario(dato)
+    elif dato<arbol.dato:
+        return ArbolBinario(arbol.dato, insertar(dato,arbol.izq), arbol.der)
     else:
-        if dato < arbol.dato:
-            arbol.izq=insertarElemento(dato,arbol.izq)
-        else:
-            arbol.der=insertarElemento(dato,arbol.der)
-    return arbol
+        return ArbolBinario(arbol.dato, arbol.izq, insertar(dato,arbol.der))
 
 def preOrden(arbol):
     if arbol==None:
@@ -83,15 +78,18 @@ def enOrden(arbol):
         return enOrden(arbol.izq)+[arbol.dato]+enOrden(arbol.der)
     
 a1 = ArbolBinario(dato=12,
-                     izq=ArbolBinario(dato=8,
-                                      izq=ArbolBinario(dato=4),
-                                      der=ArbolBinario(dato=10,
-                                                   izq=ArbolBinario(dato=9),
-                                                   der=ArbolBinario(dato=11))
-                                      ),
-                     der=ArbolBinario(dato=25,
-                                      izq=ArbolBinario(dato=17),
-                                      der=ArbolBinario(dato=30,
-                                                   izq=ArbolBinario(dato=28),
-                                                   der=ArbolBinario(dato=50))
-                                      ))
+                  izq=ArbolBinario(dato=8,
+                                   izq=ArbolBinario(dato=4),
+                                   der=ArbolBinario(dato=10,
+                                                    izq=ArbolBinario(dato=9),
+                                                    der=ArbolBinario(dato=11)
+                                                    )
+                                  ),
+                  der=ArbolBinario(dato=25,
+                                   izq=ArbolBinario(dato=17),
+                                   der=ArbolBinario(dato=30,
+                                                    izq=ArbolBinario(dato=28),
+                                                    der=ArbolBinario(dato=50)
+                                                    )
+                                  )
+                  )
